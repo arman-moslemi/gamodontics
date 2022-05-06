@@ -1,0 +1,543 @@
+@font-face {
+    font-family:'IRANSans-Bold' ;
+    src: url('../fonts/IRANSans\(FaNum\)_Bold.ttf');
+}
+@font-face {
+    font-family:'IRANSans' ;
+    src: url('../fonts/IRANSans\(FaNum\).ttf');
+}
+@font-face {
+    font-family:'IRANSans-Medium' ;
+    src: url('../fonts/IRANSans\(FaNum\)_Medium.ttf');
+}
+
+@font-face {
+    font-family:'MjBeirut' ;
+    src: url('../fonts/Mj_Beirut.ttf');
+}
+@font-face {
+    font-family: 'IRANSans-Light';
+    src: url('../fonts/IRANSans\(FaNum\)_Light.ttf');
+}
+button{
+    all: unset;
+}
+/**********/
+.loginBody{
+    background-color: #E3F9FE;
+    height: 100vh;
+    padding-top:8%;
+}
+.back1{
+    position: absolute;
+    top: 0%;
+    left: 10%;
+    width: 300px;
+}
+.back2{
+    position: absolute;
+    bottom: 2%;
+    right:2%;
+    width: 500px;
+}
+.loginTitle{
+    text-align: center;
+    font-size: 40px;
+    color: #000;
+    
+}
+.loginBox{
+    background-color: #fff;
+    width: 30%;
+    z-index: 1000;
+    position: relative;
+    padding: 45px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    box-shadow: 10px 5px 50px 2px rgba(128, 149, 153, 0.11);
+    border-radius: 20px;
+    justify-content: center;
+}
+.loginBold{
+    font-family: 'IRANSans-Bold';
+    color: #111;
+    margin-bottom: 10px;
+}
+.loginLight{
+    font-family: 'IRANSans-Light';
+    color: #8d8d8d;
+}
+.InputCustom{
+    background-color: #f0f0f0;
+    height: 55px;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    font-family: 'IRANSans';
+}
+.loginLogo{
+    width: 15%;
+    margin-bottom: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+.blueBtn{
+    color: #fff;
+    background-color: #00BFF5;
+    font-family: 'IRANSans-Bold';
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+    height: 55px;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    box-shadow: 0px 4px 6px rgba(0, 191, 245, 0.53);
+}
+.blueBtn:hover{
+    border: 1px solid #004F88;
+    color: #fff;
+    background-color: #004F88;
+}
+/***********/
+.headerContainer{
+    background-color: #fff;
+    height: 100px;
+    width: 100%;
+    position: relative;
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.08);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    direction: rtl;
+}
+.homeBody{
+    background-color: #E3F9FE;
+    height: 100vh;
+    padding-top:3%;
+    
+}
+
+.list {
+    list-style-type: none;
+    direction: rtl;
+    height: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    position: relative;
+    margin-bottom: 0px;
+    
+}
+.items {
+    margin-right: 20px;
+    font-size: 15px;
+    font-family: 'IRANSans-Medium';
+    color: #004F88;
+    cursor: pointer;
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-bottom: 0px;
+}
+
+
+.menuLogo{
+    width: 200px;
+    margin-left: 50px;
+}
+.user{
+    width: 15px;
+    margin-left: 10px;
+}
+.whiteBox{
+    background-color: #fff;
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.08);
+    border-radius: 15px;
+    padding: 15px 70px !important;
+    align-items: center;
+    margin-top: 30px;
+    position: relative;
+}
+.homeLeftImg{
+    width: 80%;
+    margin-right: auto;
+  
+    display: block;
+   
+}
+.rightTitle{
+    color: #004F88;
+    font-family: 'MjBeirut';
+    font-size: 60px;
+    text-align: right;
+    
+}
+.ta-right{
+    text-align: right;
+}
+.startGame{
+    color: #fff;
+    background-color: #00BFF5;
+    font-family: 'IRANSans-Bold';
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+    height: 40px;
+    width: 160px;
+    float: right;
+    box-shadow: 0px 4px 6px rgba(0, 191, 245, 0.53);
+    margin-top: 20px;
+}
+.startGame:hover{
+    background-color: #004F88;
+}
+.boxTitle{
+    font-family: 'IRANSans-Bold';
+    color: #00BFF5;
+    font-size: 20px;
+    text-align: right;
+    margin-top: 20px;
+}
+.textGuide{
+    color: #8d8d8d;
+    font-family: 'IRANSans';
+    text-align: right;
+    line-height: 30px
+    ;
+}
+.video-react-video{
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+.btndeactive{
+    background: #C1C1C1 !important;
+    box-shadow: 0px 4px 6px rgba(138, 138, 138, 0.24) !important;
+}
+.mr4{
+    margin-right: 4%;
+}
+.stepTitle{
+    font-family: 'MjBeirut';
+    color: #004F88;
+    font-size: 35px;
+    text-align: center;
+    margin: 25px;
+}
+.grayBox{
+    width: 50%;
+    background-color: #f7f7f7;
+    height: 75px;
+    border-radius: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 15px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    direction: rtl;
+    align-items: center;
+}
+.grayBox .startGame{
+    margin-top: 0px !important;
+}
+.grayBoxText{
+    font-family: 'IRANSans-Bold';
+    color: #000;
+    margin-bottom: 0px;
+}
+.circleBox{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #00BFF5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+}
+.circleBox img{
+    width: 50%;
+}
+.blueTitle{
+    color: #00BFF5;
+    font-family: 'IRANSans-Bold';
+    margin-bottom: 0px;
+    font-size: 20px;
+}
+.navyTitle{
+    color: #004F88;
+    font-family: 'IRANSans';
+    font-size: 20px;
+    margin-bottom: 0px;
+    margin-right: 15px;
+    text-decoration: none;
+}
+.navyTitle:hover{
+    color: #00BFF5;
+}
+.heightC{
+    height: 40px;
+}
+.infoBoxDiv{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.infoBox{
+    background-color: #fff;
+    box-shadow: 5px 5px 50px rgba(138, 138, 138, 0.24);
+    border-radius: 10px;
+    height: 280px;
+    width: 250px;
+    margin-right: 15px;
+    margin-left: 15px;
+    text-align: center;
+    padding: 25px;
+    margin-top: 15px;
+}
+.infoBox img{
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 15px;
+
+}
+.userPosition{
+    font-family: 'IRANSans';
+    color: #8D8D8D;
+    text-align: center;
+    font-size: 15px;
+    
+}
+.userName{
+    font-family: 'IRANSans-Bold';
+    color: #004F88;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.coinText{
+    font-size: 20px;
+    color: #004F88;
+    font-family: 'IRANSans-Bold';
+    margin-right: 15px;
+    margin-bottom: 0px;
+}
+.coin{
+    width: 55px;
+}
+.w5{
+    width: 10%;
+    text-align: center;
+}
+.w80{
+    width: 75%;
+    text-align: right;
+}
+.w15{
+    width: 15%;
+    text-align: center;
+}
+.rankHeader p{
+    font-family: 'IRANSans-Bold';
+    color: #111;
+    margin-bottom: 0px;
+}
+.rankHeader{
+    display: flex;
+    direction: rtl;
+    background-color: rgba(156, 156, 156, 0.3);
+    padding: 10px 20px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    height: 60px;
+    align-items: center;
+}
+.rankTable{
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: rgba(240, 240, 240, 0.5);
+}
+.tableBody{
+    display: flex;
+    direction: rtl;
+    align-items: center;
+    border-bottom: 1px solid #c4c4c4;
+    padding: 20px 20px;
+
+}
+.tableBody p{
+    font-family: 'IRANSans';
+    color: #000;
+    margin-bottom: 0px;
+}
+.correctBox{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:  rgba(141, 141, 141, 0.67);
+    height: 60px;
+    border-radius: 15px;
+    padding: 10px 20px;
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    direction: rtl;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.wrongBox{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:  #FE0000;
+    height: 60px;
+    border-radius: 15px;
+    padding: 10px 20px;
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    direction: rtl;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.wrongBox p{
+    color: #fff;
+    font-family: 'IRANSans';
+    margin-bottom: 0px;
+}
+.correctBox p{
+    color: #fff;
+    font-family: 'IRANSans';
+    margin-bottom: 0px;
+}
+.clock{
+    width: 16px;
+    margin-left: 15px;
+}
+.QuestionBox{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:  #f6f6f6;
+    height: 60px;
+    border-radius: 15px;
+    padding: 10px 20px;
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    direction: rtl;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    z-index: 10000;
+}
+.QuestionBox p{
+    font-family: 'IRANSans-Bold';
+    margin-bottom: 0px;
+    color: #004F88;
+}
+.QuestionDiv{
+    background-color: #fff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 20px 15px;
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    direction: rtl;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: right;
+ 
+}
+.question{
+    font-family: 'IRANSans';
+    text-align: right;
+    color: #000;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+} 
+.textArea{
+    width: 80%;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #111;
+}
+.bottomBox{
+    display: flex;
+    justify-content: space-between;
+    align-items:center ;
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    direction: rtl;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.bottomText{
+    font-family: 'IRANSans-Bold';
+    color: #00BFF5;
+    font-size: 25px;
+}
+.ta-right{
+    text-align: right;
+}
+.responsiveMenu{
+    display: none;
+    background-color: #fff;
+
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.responsiveMenu img{
+    width: 100px;
+}
+.navbar-toggler{
+    border: none;
+    color: transparent;
+}
+.w100{
+    width: 100%;
+}
+.responsiveLink{
+    font-family: 'IRANSans';
+    margin-bottom: 0px;
+    margin-top: 0px;
+    color: #004F88 !important;
+    text-align: right;
+    margin-right: 25px;
+}
+.resBlock{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.resB{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.resD{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

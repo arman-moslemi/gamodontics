@@ -1,0 +1,261 @@
+@media screen and (max-width:1400px){
+
+    .loginBox{
+        width: 50%;
+    }
+    .items{
+        margin-right: 20px;
+        margin-left:20px;
+    }
+    .blueTitle{
+        font-size: 15px;
+    }
+
+}
+@media screen and (max-width:1200px){
+    .grayBox{
+        width: 80%;
+    }
+}
+@media screen and (max-width:1000px){
+    .whiteBox{
+        padding-top: 25px !important;
+        padding-bottom: 25px !important;
+    }
+    .headerContainer{
+        max-width: 100%;
+    }
+    .whiteBox{
+        max-width:90%;
+    }
+    .menuLogo{
+        width: 100px;
+    }
+    .items{
+        margin-right: 10px;
+        margin-left:10px;
+    }
+    .resBlock{
+        display: block !important;
+    }
+    .resB{
+        justify-content: start !important;
+    }
+    .whiteBox .row{
+        display:  block !important;
+    }
+    .whiteBox .row .col-md-6{
+        width: 100% !important;
+    }
+    .homeLeftImg{
+        width: 50% !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        display: block !important;
+    }
+    .rightTitle{
+        font-size: 35px;
+    }
+    .correctBox{
+        width: 80%;
+    }
+    .wrongBox{
+        width: 80%;
+    }
+    .QuestionBox{
+
+    width: 80%;
+    }
+    .QuestionDiv{
+        width: 80%;
+    }
+    .bottomBox{
+        width: 80%;
+    }
+    .rankTable{
+        width: 100%;
+    }
+    .grayBox{
+        width: 100%;
+    }
+    .pdc2{
+        padding-right: 10px !important;
+        padding-left: 10px !important;
+    }
+    .grayBox .startGame{
+        font-size: 13px !important;
+        width: 120px !important;
+    }
+    .grayBoxText{
+        font-size: 13px;
+    }
+}
+@media screen and (max-width:850px){
+    .loginBox{
+        width: 70%;
+    }
+    .menuLogo{
+        display: none;
+    }
+    .correctBox{
+        width: 90%;
+    }
+    .wrongBox{
+        width: 90%;
+    }
+    .QuestionBox{
+
+    width: 90%;
+    }
+    .QuestionDiv{
+        width: 90%;
+    }
+    .bottomBox{
+        width: 90%;
+    }
+    .wres100 .container{
+        max-width: 95%;
+    }
+    .pdc{
+        padding-right: 10px !important;
+        padding-left: 10px !important;
+    }
+}
+@media screen and (max-width:800px){
+    .desktopMenu{
+        display: none !important;
+    }
+    .responsiveMenu{
+        display: flex !important;
+    }
+    .navbar-light .navbar-toggler{
+        color: transparent !important;
+        border-color: transparent !important;
+    }
+    .homeLeftImg{
+        width: 70% !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        display: block !important;
+    }
+    .wres100{
+        padding-right: 10px !important;
+        padding-left: 10px !important;
+    }
+
+}
+@media screen and (max-width:680px){
+    .desktopMenu{
+        display: none !important;
+    }
+    .responsiveMenu{
+        display: flex !important;
+    }
+    .navbar-light .navbar-toggler{
+        color: transparent !important;
+    }
+    .startGame{
+        margin-top: 0px !important;
+    }
+    .rightTitle{
+        font-size: 25px !important;
+    }
+    .bottomBox{
+        display: block;
+    }
+    .bottomText{
+        font-size: 18px;
+    }
+}
+@media screen and (max-width:560px){
+    .loginBox{
+        width: 90%;
+    }
+    .whiteBox {
+        padding:20px 20px 50px 20px !important;
+    }
+    .resD{
+        display: block !important;
+    }
+    .rightTitle{
+        margin-bottom: 0px !important;
+    }
+    .startGame{
+        font-size: 15px;
+    }
+    .fl{
+        float: left !important;
+    }
+    .loginLight{
+        font-size: 13px;
+    }
+    .textGuide{
+        font-size: 13px;
+    }
+    .correctBox{
+        width: 100%;
+        display: block;
+    }
+    .wrongBox{
+        width: 100%;
+        display: block;
+    }
+    .QuestionBox{
+display: block;
+    width: 100%;
+    }
+    .QuestionDiv{
+        width: 100%;
+    }
+    .bottomBox{
+        width: 100%;
+    }
+    .rankHeader p{
+        font-size: 13px;
+    }
+    .w5{
+        width: 10%;
+    }
+    .w80{
+        width: 70%;
+    }
+    .w15{
+        width: 20%;
+    }
+    .wb100{
+        width: 110px !important;
+        margin-bottom: 5px;
+    }
+}
+@media screen and (max-width:450px){
+    .loginBox{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .InputCustom{
+        width: 95%;
+    }
+    .blueBtn{
+        width: 95%;
+    }
+    .circleBox{
+        width: 35px;
+        height: 35px;
+    }
+    .correctBox p{
+        font-size: 13px;
+    }
+    .wrongBox p{
+        font-size: 13px;
+    }
+    .QuestionBox p{
+        font-size: 13px;
+    }
+    .question{
+        font-size: 13px;
+    }
+    .grayBox .startGame{
+        font-size: 13px !important;
+        width: 100px !important;
+    }
+}
