@@ -7,12 +7,45 @@ import Phone from "../../assets/img/phone.png";
 import Telegram from "../../assets/img/telegram.png";
 import Email from "../../assets/img/email.png";
 import UserImg from "../../assets/img/userImg.png";
-import { Link } from "react-router-dom";
-
+import { apiUrl ,apiAsset} from "../../../../commons/inFormTypes";
+import React,{useState,useEffect} from 'react'
+import { Link, useHistory ,useh} from "react-router-dom";
 const AboutUs = () => {
+  const [data,setData]=useState([])
+  const [provider,setProvider]=useState([])
+
+  useEffect(() => {
+    About();
+// alert(val)
+  }, []);
+  const About=()=>{
+    const axios = require("axios");
 
 
+    axios.get(apiUrl + "Aboutus")
+    .then(function (response) {
+      if (response.data.result == "true") {
+        console.log(777)
+        console.log(response.data.InfoData)
+    setData(response.data.InfoData)
+    setProvider(response.data.AdminData)
+
+    }
+    else{
+    //  alert("نام کاربری یا رمز عبور نادرست میباشد")
+
+    }})
+    .catch(function (error) {
+      console.log(777)
+
+      console.log(error);
+    });
   
+
+
+
+  }
+
 
 
 
@@ -36,7 +69,7 @@ const AboutUs = () => {
          شماره تماس : 
        </p>
        <a href="#" className="navyTitle">
-         09120760763
+         {data?.Phone}
        </a>
      </div>
      <div className=" mt-4 resB">
@@ -47,8 +80,7 @@ const AboutUs = () => {
          تلگرام مجموعه : 
        </p>
        <a  href="#" className="navyTitle">
-         09120760763
-       </a>
+       {data?.Telegram}       </a>
      </div>
      <div className="resB mt-4">
        <div className="circleBox">
@@ -58,8 +90,7 @@ const AboutUs = () => {
          ایمیل : 
        </p>
        <a  href="#" className="navyTitle">
-         info@gmail.com
-       </a>
+       {data?.Email}       </a>
      </div>
    </div>
    <div className="heightC">
@@ -69,33 +100,23 @@ const AboutUs = () => {
       سازندگان بازی
     </p>
     <div className="infoBoxDiv">
+      {
+        provider.map((item)=>{
+          return(
+
       <div className="infoBox">
         <img src={UserImg} />
         <p className="userName">
-          مهندس احمد احمدی
+          {item.NameFamily}
         </p>
         <p className="userPosition">
-          دانشجوی دندانپزشکی
+         {item.Role}
         </p>
       </div>
-      <div className="infoBox">
-        <img src={UserImg} />
-        <p className="userName">
-          مهندس احمد احمدی
-        </p>
-        <p className="userPosition">
-          دانشجوی دندانپزشکی
-        </p>
-      </div>
-      <div className="infoBox">
-        <img src={UserImg} />
-        <p className="userName">
-          مهندس احمد احمدی
-        </p>
-        <p className="userPosition">
-          دانشجوی دندانپزشکی
-        </p>
-      </div>
+          )
+        })
+      }
+ 
     </div>
     </Container>
 

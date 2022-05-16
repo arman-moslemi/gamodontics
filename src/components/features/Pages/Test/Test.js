@@ -4,10 +4,11 @@ import Header from "../layouts/Header";
 import Img1 from "../../assets/img/back1.png";
 import Img2 from "../../assets/img/back2.png";
 import Left from "../../assets/img/left.png"
-import { Link } from "react-router-dom";
+import { Link, useHistory ,useh} from "react-router-dom";
 
 const Test = () => {
 
+  const history = useHistory();
 
   
 
@@ -36,13 +37,13 @@ const Test = () => {
      
       </p>
       <div className="d-flex justify-content-between" style={{direction:'rtl',flexWrap:'wrap'}}>
-      <button className="startGame wb100">
-        شروع بازی
-      </button>
-      <button className="startGame btndeactive wb100" disabled="true">
+      <button onClick={()=>history.push("/TestStep1")} className="startGame wb100">
+امتیازی    
+  </button>
+      <button onClick={()=>history.push("/TestStep1")} className="startGame btndeactive wb100" disabled="true">
        مقاومتی
       </button>
-      <button className="startGame wb100">
+      <button onClick={()=>history.push("/Bank")} className="startGame wb100">
         بانک
       </button>
         </div>

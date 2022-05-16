@@ -5,7 +5,10 @@ import Logo from "../../assets/img/logo.png"
 import User from "../../assets/img/user.png"
 import { Nav, Navbar, NavDropdown, NavItem } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Link, useHistory ,useh} from "react-router-dom";
+
 const Header = () => {
+  const history = useHistory();
 
   return (
     <>
@@ -18,11 +21,11 @@ const Header = () => {
   
       <ul className="list">
         <img src={Logo} className="menuLogo"/>
-      <li className="items">شروع بازی</li>
-      <li className="items">راهنما</li>
-      <li className="items">درباره ما</li>
-      <li className="items">بانک امتیازات</li>
-      <li className="items d-flex align-items-center">
+      <li onClick={()=>history.push("Test")} className="items">شروع بازی</li>
+      <li onClick={()=>history.push("Guide")} className="items">راهنما</li>
+      <li onClick={()=>history.push("AboutUs")} className="items">درباره ما</li>
+      <li onClick={()=>history.push("Bank")} className="items">بانک امتیازات</li>
+      <li onClick={()=>history.push("Home")} className="items d-flex align-items-center">
         <img src={User} className="user"/>
         خروج از حساب کاربری</li>
     </ul>

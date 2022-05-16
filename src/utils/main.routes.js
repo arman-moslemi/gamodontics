@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter,Routes , Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route,HashRouter } from 'react-router-dom';
 import Home from '../components/features/Pages/Home/Home';
 import Login from "../components/features/Pages/Login/Login";
 import Guide from '../components/features/Pages/Guide/Guide';
@@ -13,76 +13,76 @@ import Questions from '../components/features/Pages/Questions/Questions';
 const MainRoutes = (props) => {
 	return (
   <BrowserRouter basename="/">
-			<Routes>
+			<Switch>
 				<Route
 					exact
 					path='/'
 					name='صفحه اصلی'
-					element={<Home/>}
-				/></Routes>
-		<Routes>
+					 render={(props) => <Home/>}
+				/>
 				<Route
 					exact
 					path='/Login'
 					name='ورود'
-					element={<Login/>}
-				/></Routes>
-				<Routes>
+					 render={(props) => <Login/>}
+				/> 
+				 
 				<Route
 					exact
 					path='/Guide'
 					name='راهنمای بازی'
-					element={<Guide/>}
-				/></Routes>
-					<Routes>
+					 render={(props) => <Guide/>}
+				/> 
+					 
 				<Route
 					exact
 					path='/Test'
 					name='تست'
-					element={<Test/>}
-				/></Routes>
-				<Routes>
+					 render={(props) => <Test/>}
+				/> 
+				 
 				<Route
 					exact
 					path='/TestStep1'
 					name='تست'
-					element={<TestStep1/>}
-				/></Routes>
-				<Routes>
+					 render={(props) => <TestStep1/>}
+				/> 
+				 
 				<Route
 					exact
 					path='/TestStep2'
 					name='تست'
-					element={<TestStep2/>}
-				/></Routes>
-					<Routes>
+					 render={(props) => <TestStep2/>}
+				/> 
+					 
 				<Route
 					exact
 					path='/AboutUs'
 					name='درباره ما'
-					element={<AboutUs/>}
-				/></Routes>
-						<Routes>
+					 render={(props) => <AboutUs/>}
+				/> 
+						 
 				<Route
 					exact
 					path='/Bank'
 					name='بانک'
-					element={<Bank/>}
-				/></Routes>
-					<Routes>
+					 render={(props) => <Bank/>}
+				/> 
+					 
 				<Route
 					exact
 					path='/Rank'
 					name='جدول امتیاز'
-					element={<Rank/>}
-				/></Routes>
-					<Routes>
+					 render={(props) => <Rank/>}
+				/> 
+					 
 				<Route
 					exact
 					path='/Questions'
 					name='سوالات'
-					element={<Questions/>}
-				/></Routes>
+					render={(props) => <Questions/>}
+				/> 
+				</Switch>
 		</BrowserRouter>
 	);
 };

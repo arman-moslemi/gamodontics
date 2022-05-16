@@ -4,9 +4,10 @@ import Header from "../layouts/Header";
 import Img1 from "../../assets/img/back1.png";
 import Img2 from "../../assets/img/back2.png";
 import Left from "../../assets/img/left.png"
-import { Link } from "react-router-dom";
+import { Link, useHistory ,useh} from "react-router-dom";
 
 const TestStep1 = () => {
+  const history = useHistory();
 
 
   
@@ -36,7 +37,7 @@ const TestStep1 = () => {
      
       </p>
       <div className="d-flex" style={{direction:'rtl'}}>
-      <button className="startGame">
+      <button  onClick={()=>history.push("/TestStep2")} className="startGame">
         شروع بازی
       </button>
       
