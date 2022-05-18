@@ -10,7 +10,8 @@ import { Link, useHistory ,useh} from "react-router-dom";
 const TestStep2 = () => {
 
   const [data,setData]=useState([])
-  const [provider,setProvider]=useState([])
+  const [level,setlevel]=useState(1)
+  const history = useHistory();
 
   useEffect(() => {
     About();
@@ -18,14 +19,17 @@ const TestStep2 = () => {
   }, []);
   const About=()=>{
     const axios = require("axios");
+   const user= localStorage.getItem("user");
 
-
-    axios.get(apiUrl + "TypeShow")
+console.log(66)
+console.log(user)
+    axios.post(apiUrl + "TypeShow",{CustomerID:user})
     .then(function (response) {
       if (response.data.result == "true") {
         console.log(777)
-        console.log(response.data.Data)
-    setData(response.data.Data)
+        console.log(response.data)
+    setData(response.data.TypeData)
+    setlevel(response.data.LevelData)
 
     }
     else{
@@ -58,35 +62,32 @@ const TestStep2 = () => {
       مسابقه ی امتیازی
     </p>
     {
-      data?.map((item)=>{
+      data?.map((item,index)=>{
         return(
-    <div className="grayBox">
+          <div className="grayBox">
       <p className="grayBoxText">
         مرحله {item.TypeID}
       </p>
       <p className="grayBoxText">
       {item.TypeName}
       </p>
-      <button className="startGame">
+     { index+1<=level?
+     
+      <button className="startGame" onClick={()=>history.push("/Questions/"+item.TypeID)}>
         شروع بازی
       </button>
+    :
+    <button className="startGame btndeactive" disabled="true">
+    شروع بازی
+  </button>
+    }
     </div>
+    
+ 
 
         )
       })
     }
-    {/* <div className="grayBox">
-      <p className="grayBoxText">
-        مرحله دوم
-      </p>
-      <p className="grayBoxText">
-     تهیه حفره دسترسی
-      </p>
-      <button className="startGame btndeactive" disabled="true">
-        شروع بازی
-      </button>
-    </div>
-   */}
     </Container>
 
     </div>

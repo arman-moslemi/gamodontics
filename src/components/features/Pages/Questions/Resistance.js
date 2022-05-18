@@ -8,7 +8,7 @@ import Clock from "../../assets/img/clock.png";
 import { apiUrl ,apiAsset} from "../../../../commons/inFormTypes";
 import React,{useState,useEffect} from 'react'
 import { Link, useHistory ,useParams} from "react-router-dom";
-const Questions = () => {
+const Resistance = () => {
 
   const [data,setData]=useState([])
   const [ActiveQuestion,setActiveQuestion]=useState(0)
@@ -17,8 +17,8 @@ const Questions = () => {
   const [seconds, setSeconds ] =  useState(10);
   const [numSec, setNumSec ] =  useState(0);
   const [rate, setRate ] =  useState(0);
+  const [end, setEnd ] =  useState(false);
   const history = useHistory();
-  const params = useParams().id;
 
   useEffect(()=>{
   let myInterval = setInterval(() => {
@@ -27,18 +27,11 @@ const Questions = () => {
           }
           if (seconds === 0) {
               if (minutes === 0) {
-                if(ActiveQuestion==10)
-                {
-
+                  Submit()
+                
+setEnd(true)
                   clearInterval(myInterval)
-Submit()
-                }
-                else{
-                  setAnswers([...answers,0])
-
-                  setActiveQuestion(ActiveQuestion+1)
-                  setSeconds(10)
-                }
+            
               } else {
                   setMinutes(minutes - 1);
                   setSeconds(10);
@@ -59,7 +52,7 @@ Submit()
 
 console.log(66)
 console.log(user)
-    axios.post(apiUrl + "CreateTest",{TypeID:params})
+    axios.get(apiUrl + "CreateTestRes")
     .then(function (response) {
       if (response.data.result == "true") {
         console.log(777)
@@ -87,12 +80,12 @@ console.log(user)
 
 console.log(66)
 console.log(user)
-    axios.post(apiUrl + "Final",{CustomerID:user,TypeID:params,Score:rate})
+    axios.post(apiUrl + "Final",{CustomerID:user,Score:rate})
     .then(function (response) {
       if (response.data.result == "true") {
         console.log(777)
         console.log(response.data.Data)
-    alert("با موفقیت ثبت شد")
+    alert("جواب شما نادرست می باشد.آزمون به اتمام رسید")
 history.push("/Test")
     }
     else{
@@ -117,25 +110,22 @@ if(data[ii].Correct==id){
   console.log(4444)
 
 setRate(rate+data[ii].ScoreTest+seconds)
-}
-else if(data[ii]!=0){
-setRate(rate-4)
-}
-console.log(answers)
-
-  if(ActiveQuestion<10)
+if(ActiveQuestion<data.length)
 {
 setSeconds(10)
   setActiveQuestion(ActiveQuestion+1)
   
-  if(ActiveQuestion==10){
-    setSeconds(1)
-  }
+  
 }
 
 }
+else
+  {  
+      setEnd(true);
+Submit()
+}
 
-
+}
 
 
   return (
@@ -231,7 +221,7 @@ answers[index]==item.Correct?
 
 
 {
-  ActiveQuestion==10?
+  end?
 
     <div className="bottomBox">
       <p className="bottomText">
@@ -261,4 +251,4 @@ answers[index]==item.Correct?
     </div>
   );
 };
-export default Questions;
+export default Resistance;

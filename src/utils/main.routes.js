@@ -10,9 +10,10 @@ import AboutUs from '../components/features/Pages/AboutUs/AboutUs';
 import Bank from '../components/features/Pages/Bank/Bank';
 import Rank from '../components/features/Pages/Rank/Rank';
 import Questions from '../components/features/Pages/Questions/Questions';
+import Resistance from '../components/features/Pages/Questions/Resistance';
 const MainRoutes = (props) => {
 	return (
-  <BrowserRouter basename="/">
+  <BrowserRouter >
 			<Switch>
 				<Route
 					exact
@@ -77,11 +78,22 @@ const MainRoutes = (props) => {
 				/> 
 					 
 				<Route
-					exact
-					path='/Questions'
+					
+					path='/Resistance'
+				
+
+					name='سوالات'
+					render={(props) => <Resistance/>}
+				/> 
+				<Route
+					
+					path='/Questions/:id'
+				
+
 					name='سوالات'
 					render={(props) => <Questions/>}
 				/> 
+			
 				</Switch>
 		</BrowserRouter>
 	);

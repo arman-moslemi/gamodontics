@@ -9,7 +9,20 @@ import { Link, useHistory ,useh} from "react-router-dom";
 
 const Header = () => {
   const history = useHistory();
+  const [data,setData]=useState()
 
+  const About=()=>{
+   const user= localStorage.getItem("user");
+setData(user)
+  }
+  const exit=()=>{
+   const user= localStorage.setItem("user","");
+  history.push("/")
+  }
+  useEffect(() => {
+    About();
+// alert(val)
+  }, []);
   return (
     <>
      
@@ -21,13 +34,21 @@ const Header = () => {
   
       <ul className="list">
         <img src={Logo} className="menuLogo"/>
-      <li onClick={()=>history.push("Test")} className="items">شروع بازی</li>
+      {/* <li onClick={()=>history.push("Test")} className="items">شروع بازی</li> */}
       <li onClick={()=>history.push("Guide")} className="items">راهنما</li>
       <li onClick={()=>history.push("AboutUs")} className="items">درباره ما</li>
-      <li onClick={()=>history.push("Bank")} className="items">بانک امتیازات</li>
-      <li onClick={()=>history.push("Home")} className="items d-flex align-items-center">
-        <img src={User} className="user"/>
-        خروج از حساب کاربری</li>
+      <li onClick={()=>history.push("Rank")} className="items">جدول امتیازات</li>
+        {
+          data?
+      <li onClick={()=>exit()}className="items d-flex align-items-center">
+
+          <img src={User}  className="user"/>
+          خروج از حساب کاربری</li>
+          :
+          <li onClick={()=>history.push("Login")} className="items">ورود</li>
+
+
+        }
     </ul>
      
 
@@ -43,13 +64,18 @@ const Header = () => {
   <Nav className="myPd">
   
    
-  <Nav.Link href="#" className="responsiveLink mt-2">شروع بازی</Nav.Link>
-  <Nav.Link href="#" className="responsiveLink">راهنما</Nav.Link>
-  <Nav.Link href="#" className="responsiveLink">درباره ما</Nav.Link>
-  <Nav.Link href="#" className="responsiveLink">بانک امتیازات</Nav.Link>
-  <Nav.Link href="#" className="responsiveLink">خروج از حساب کاربری</Nav.Link>
+  {/* <Nav.Link href="#" className="responsiveLink mt-2">شروع بازی</Nav.Link> */}
+  <Nav.Link  onClick={()=>history.push("Guide")} className="responsiveLink">راهنما</Nav.Link>
+  <Nav.Link onClick={()=>history.push("AboutUs")} className="responsiveLink">درباره ما</Nav.Link>
+  <Nav.Link onClick={()=>history.push("Rank")} className="responsiveLink">بانک امتیازات</Nav.Link>
+  {
+          data?
+  <Nav.Link onClick={()=>exit()} className="responsiveLink">خروج از حساب کاربری</Nav.Link>
  
+:
+<Nav.Link onClick={()=>history.push("Login")} className="responsiveLink">ورود</Nav.Link>
 
+  }
 
    
 

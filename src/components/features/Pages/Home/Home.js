@@ -4,10 +4,11 @@ import Header from "../layouts/Header";
 import Img1 from "../../assets/img/back1.png";
 import Img2 from "../../assets/img/back2.png";
 import Left from "../../assets/img/left.png"
-import { Link } from "react-router-dom";
+import { Link, useHistory ,useh} from "react-router-dom";
 
 const Home = () => {
 
+  const history = useHistory();
 
   
 
@@ -35,7 +36,7 @@ const Home = () => {
       لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است 
      
       </p>
-      <button className="startGame">
+      <button onClick={()=>history.push('Login')} className="startGame">
         شروع بازی
       </button>
       </Col>

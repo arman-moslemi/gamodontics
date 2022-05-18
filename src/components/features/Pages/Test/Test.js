@@ -4,13 +4,48 @@ import Header from "../layouts/Header";
 import Img1 from "../../assets/img/back1.png";
 import Img2 from "../../assets/img/back2.png";
 import Left from "../../assets/img/left.png"
-import { Link, useHistory ,useh} from "react-router-dom";
-
+import { apiUrl ,apiAsset} from "../../../../commons/inFormTypes";
+import React,{useState,useEffect} from 'react'
+import { Link, useHistory } from "react-router-dom";
 const Test = () => {
 
   const history = useHistory();
 
+  const [data,setData]=useState(0)
+
+  useEffect(() => {
+    About();
+// alert(val)
+  }, []);
+  const About=()=>{
+    const axios = require("axios");
+   const user= localStorage.getItem("user");
+
+console.log(66)
+console.log(user)
+    axios.post(apiUrl + "Customer",{CustomerID:user})
+    .then(function (response) {
+      if (response.data.result == "true") {
+        console.log(777)
+        console.log(response.data)
+    setData(response.data.Data.MyScore)
+
+    }
+    else{
+    //  alert("نام کاربری یا رمز عبور نادرست میباشد")
+
+    }})
+    .catch(function (error) {
+      console.log(777)
+
+      console.log(error);
+    });
   
+
+
+
+  }
+
 
 
 
@@ -40,9 +75,17 @@ const Test = () => {
       <button onClick={()=>history.push("/TestStep1")} className="startGame wb100">
 امتیازی    
   </button>
+  {
+    data>100?
+<button onClick={()=>history.push("/Resistance")} className="startGame  wb100">
+       مقاومتی
+      </button>
+    :
+
       <button onClick={()=>history.push("/TestStep1")} className="startGame btndeactive wb100" disabled="true">
        مقاومتی
       </button>
+  }
       <button onClick={()=>history.push("/Bank")} className="startGame wb100">
         بانک
       </button>

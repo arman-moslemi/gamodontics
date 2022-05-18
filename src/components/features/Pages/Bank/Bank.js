@@ -5,10 +5,74 @@ import Img1 from "../../assets/img/back1.png";
 import Img2 from "../../assets/img/back2.png";
 import Cash from "../../assets/img/cash.png";
 import Coin from "../../assets/img/coin.png";
-import { Link } from "react-router-dom";
-
+import { apiUrl ,apiAsset} from "../../../../commons/inFormTypes";
+import React,{useState,useEffect} from 'react'
+import { Link, useHistory } from "react-router-dom";
 const Bank = () => {
 
+  const history = useHistory();
+
+  const [data,setData]=useState([])
+
+  useEffect(() => {
+    About();
+// alert(val)
+  }, []);
+  const About=()=>{
+    const axios = require("axios");
+   const user= localStorage.getItem("user");
+
+console.log(66)
+console.log(user)
+    axios.post(apiUrl + "Customer",{CustomerID:user})
+    .then(function (response) {
+      if (response.data.result == "true") {
+        console.log(777)
+        console.log(response.data)
+    setData(response.data.Data)
+
+    }
+    else{
+    //  alert("نام کاربری یا رمز عبور نادرست میباشد")
+
+    }})
+    .catch(function (error) {
+      console.log(777)
+
+      console.log(error);
+    });
+  
+
+
+
+  }
+  const change=()=>{
+    const axios = require("axios");
+   const user= localStorage.getItem("user");
+
+console.log(66)
+console.log(user)
+    axios.post(apiUrl + "ScoreToCoin",{CustomerID:user})
+    .then(function (response) {
+      if (response.data.result == "true") {
+        console.log(777)
+        console.log(response.data)
+About()
+    }
+    else{
+    //  alert("نام کاربری یا رمز عبور نادرست میباشد")
+
+    }})
+    .catch(function (error) {
+      console.log(777)
+
+      console.log(error);
+    });
+  
+
+
+
+  }
 
   
 
@@ -40,11 +104,17 @@ const Bank = () => {
       <div className="d-flex align-items-center">
         <img src={Coin} className="coin"/>
         <p className="coinText">
-          امتیازات شما : 123
+          امتیازات شما : {data?.MyScore}
+        </p>
+      </div>
+      <div className="d-flex align-items-center">
+        <img src={Coin} className="coin"/>
+        <p className="coinText">
+          سکه های شما : {data?.MyCoin}
         </p>
       </div>
       <div>
-      <button className="startGame fl" style={{marginTop:0}}>
+      <button onClick={()=>change()} className="startGame fl" style={{marginTop:0}}>
        تبدیل به سکه
       </button>
       </div>
